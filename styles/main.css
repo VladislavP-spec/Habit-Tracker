@@ -221,6 +221,10 @@ main {
 	flex: 1;	
 }
 
+.habbit__input_error {
+	border: 3px solid #f44336;
+}
+
 .habbit__input::placeholder {
 	color: #8899a8;
 }

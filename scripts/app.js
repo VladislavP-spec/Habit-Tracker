@@ -2,6 +2,7 @@
 
 let habbits = [];
 const HABBIT_KEY = 'HABBIT_KEY';
+let globalactiveHabbitId;
 
 /* page */ 
 
@@ -18,7 +19,7 @@ const page = {
 		// habbitDelete: document.querySelector('.habbit-delete'),
 		// habbitForm: document.querySelector('.habbit-form'),
 		// habbitImg: document.querySelector('.habbit-img'),
-		// habbitInput: document.querySelector('.habbit-input'),
+		habbitInput: document.querySelector('.habbit__input'),
 		// habbitCreate: document.querySelector('.habbit-create'),
 	}
 }
@@ -91,6 +92,7 @@ function rerenderContent (activeHabbit) {
 } 
 
 function rerender (activeHabbitId) {
+	globalactiveHabbitId = activeHabbitId;
 	const activeHabbit = habbits.find(habbit => habbit.id === activeHabbitId);
 	if (!activeHabbit) {
 	return;
@@ -103,11 +105,32 @@ function rerender (activeHabbitId) {
 /* work with days */
 
 function addDays (event) {	
+	const form = event.target;
 	event.preventDefault();
-	console.log(event);
 	const data = new FormData(event.target);
-	console.log(data.get('comment'));
-
+	// console.log(data.get('comment'));
+	const comment = data.get('comment');
+	// page.main.habbitInput.classList.remove('habbit__input_error');
+	form['comment'].classList.remove('habbit__input_error');
+	if (!comment) {
+		// page.main.habbitInput.classList.add('habbit__input_error');
+		form['comment'].classList.add('habbit__input_error');	
+		return;
+	}
+	habbits = habbits.map(habbit => {
+		if (habbit.id === globalactiveHabbitId) {
+			return { ...habbit,
+				days: habbit.days.concat([{comment}]),
+			}
+		}
+		return habbit;
+	})	
+	// console.log(page.main.habbitInput.value);
+	// console.log(form['comment'].value);	
+	// page.main.habbitInput.value = '';		
+		form['comment'].value = '';	
+	rerender(globalactiveHabbitId);
+	saveData();
 }
 
 /* init */ 
