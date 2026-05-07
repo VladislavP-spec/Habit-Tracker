@@ -21,7 +21,8 @@ const page = {
 		// habbitImg: document.querySelector('.habbit-img'),
 		habbitInput: document.querySelector('.habbit__input'),
 		// habbitCreate: document.querySelector('.habbit-create'),
-	}
+	},
+	cover: document.querySelector('.cover'),
 }
 
 /* utils */
@@ -138,7 +139,7 @@ function deleteDay (index) {
 		if (habbit.id === globalactiveHabbitId) {
 			habbit.days.splice(index, 1);
 			return {
-				 ...habbit,
+				...habbit,
 				days: habbit.days
 			};
 		}
@@ -147,8 +148,11 @@ function deleteDay (index) {
 	rerender(globalactiveHabbitId);
 	saveData();	
 }
-
-
+/* open popup window and close it */
+function toggleCover () {
+	// const cover = document.querySelector('.cover');	
+	page.cover.classList.toggle('cover_hidden');
+}
 /* init */ 
 
 (() => {

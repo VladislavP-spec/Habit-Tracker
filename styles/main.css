@@ -75,9 +75,6 @@ padding: 10px;
 .menu__item_active {
 	background-color: #2f2fee;
 }
-.menu__item_active:hover {
-	background-color: #2f2fee;
-}
 
 .menu__item_active img {
 	filter: brightness(0) invert(1)
@@ -90,6 +87,7 @@ background: none;
 width: 46px;
 height: 46px;
 cursor: pointer;
+padding: 10px;
 }
 
 .menu__add:hover {
@@ -236,7 +234,7 @@ input:focus-visible {
 }
 
 button {
-background: #d9d8f0;
+background: #edecfe;;
 border-radius: 9px;
 padding: 12px 32px;
 font-family: "Comfortaa", sans-serif;
@@ -246,7 +244,7 @@ cursor: pointer;
 }
 
 button:hover {
-	background: #c3c2ec;
+	background: #dedef4;
 }
 
 .cover {
@@ -261,9 +259,9 @@ button:hover {
 	align-items: center;
 }
 
-/* .cover_hidden {
+.cover_hidden {
 	display: none;
-} */
+}
 
 .popup {
 	position: relative;
@@ -337,12 +335,21 @@ margin-bottom: 10px;
 	width: 100%;
 }
 
+
 .popup__close {
 	position: absolute;
+	padding: 0px 0px 0px 0px;
 	right: 15px;
 	top: 15px;
 	border: none;
 	background: none;	
 	cursor: pointer;
+	transition: all 0.4s ease;
+}	
+
+.popup__close:hover {
+	background: none;
+	transform: scale(1.1, 1.1);
+	
 }	
 
