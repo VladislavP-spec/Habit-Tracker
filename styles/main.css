@@ -212,7 +212,7 @@ main {
 	top: 18px;
 }
 
-.habbit__input {
+input {
 	border: 3px solid #d3daf7;
 	border-radius: 9px;
 	background: #fff;
@@ -235,7 +235,7 @@ input:focus-visible {
 	outline: 2px solid #9faeed;
 }
 
-.habbit__create {
+button {
 background: #d9d8f0;
 border-radius: 9px;
 padding: 12px 32px;
@@ -245,6 +245,104 @@ border: none;
 cursor: pointer;
 }
 
-.habbit__create:hover {
+button:hover {
 	background: #c3c2ec;
 }
+
+.cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.25);
+	display: flex;
+	justify-content: center;	
+	align-items: center;
+}
+
+/* .cover_hidden {
+	display: none;
+} */
+
+.popup {
+	position: relative;
+	background: #fff;
+	box-shadow: 0 8px 14px 12px rgba(56, 56, 56, 0.05);
+	border-radius: 10px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 600px;
+	width: 100%;
+}
+
+.popup__title {
+font-size: 24px;
+line-height: 27px;
+text-align: center;
+color: #000;
+}
+
+.popup__label {
+font-weight: 500;
+line-height: 16px;
+color: #768396;
+margin-bottom: 10px;
+}
+
+.popup__icon-select {
+	display: flex;
+	gap: 24px;
+	margin-bottom: 18px;
+}
+
+.icon {
+	border: 1px solid #5051f9;
+	border-radius: 14px;
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	height: 46px;
+	cursor: pointer;
+}
+
+.icon:hover {
+	background-color: #8787fd;
+}
+
+.icon_active {
+	background-color: #5051f9;	
+}
+
+.icon_active img {
+	filter: brightness(0) invert(1)
+}
+.icon:hover img {
+	filter: brightness(0) invert(1)
+}
+
+.popup__form {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	align-items: center;
+	width: 100%;
+}
+
+.popup__form input{
+	width: 100%;
+}
+
+.popup__close {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	border: none;
+	background: none;	
+	cursor: pointer;
+}	
+
