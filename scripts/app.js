@@ -22,7 +22,10 @@ const page = {
 		habbitInput: document.querySelector('.habbit__input'),
 		// habbitCreate: document.querySelector('.habbit-create'),
 	},
-	cover: document.querySelector('.cover'),
+	popup: {
+		index: document.querySelector('.cover'),
+		iconField: document.querySelector('.popup__input-icon'),
+	},		
 }
 
 /* utils */
@@ -151,8 +154,19 @@ function deleteDay (index) {
 /* open popup window and close it */
 function toggleCover () {
 	// const cover = document.querySelector('.cover');	
-	page.cover.classList.toggle('cover_hidden');
+	page.popup.index.classList.toggle('cover_hidden');
+	}
+
+/* working with habbits */
+function setIcon (context, icon) {
+	page.popup.iconField.value = icon;
+	const activeIcon = document.querySelector('.icon.icon_active');
+	activeIcon.classList.remove('icon_active');
+	console.log(context);
+	context.classList.add('icon_active');
 }
+
+
 /* init */ 
 
 (() => {

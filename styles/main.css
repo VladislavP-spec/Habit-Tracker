@@ -88,6 +88,13 @@ width: 46px;
 height: 46px;
 cursor: pointer;
 padding: 10px;
+display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu__add img {
+	
 }
 
 .menu__add:hover {
